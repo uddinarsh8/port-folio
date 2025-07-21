@@ -494,9 +494,9 @@ body {
   .achievement-card,
   .project-card,
   .patent-card {
-    width: 90% !important;
+    width: 80% !important;
     margin: 12px auto;
-    margin-left: 23px;
+    margin-left: 45px;
   
     min-height: auto;
   }
