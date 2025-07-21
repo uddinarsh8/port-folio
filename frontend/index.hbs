@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsh Raza – Portfolio</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#patents">Patents</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="/cv/Arsh_Uddin_CV.pdf" download>Download CV</a></li>
+    </ul>
+  </nav>
+
+  <section id="about" class="hero-section">
+    <h1 class="glow">Hi, I'm Arsh Uddin</h1>
+    {{!-- <img src="/images/achievements/creathon-1.jpg" /> --}}
+    <h2 id="typing"></h2>
+    <p>Inventor • Developer • Explorer of the Impossible</p>
+     <div class="about-content">
+    <p>
+      Hello! I am <strong>Arsh Uddin</strong>, an enthusiastic tech innovator passionate about IoT, software development, and startup culture. I’m currently working on projects involving LoRa mesh networking, AI-powered health devices, and full-stack web apps.
+    </p>
+
+    <h3 class="sub-heading">Education</h3>
+    <ul class="education-list">
+      <li><strong>B.Tech in Information Technology</strong> –Shri Ram Murti Smarak College of Engineering & Technology, Bareilly (2023–2027)</li>
+      <li><strong>Senior Secondary (12th)</strong> – wood row School (2022–2023)</li>
+      <li><strong>Secondary (10th)</strong> – St.francis Convet School (2019–2020)</li>
+    </ul>
+  </div>
+  </section>
+
+  <section id="achievements" data-aos="fade-up">
+    <h2>🏆 Achievements</h2>
+
+    <div>
+      {{!-- <button id="slider-left" class="slider-button">&#8592;</button>
+      <button id="slider-right" class="slider-button">&#8594;</button> --}}
+
+      <div class="achievement-slider-wrapper" id="achievements-list">
+        {{#each achievements}}
+        <div class="achievement">
+          <h3>{{title}}</h3>
+          <p>{{description}}</p>
+          <div class="achievement-images">
+            {{#each images}}
+            <img src="/images/achievements/{{this}}" alt="{{../title}}">
+            {{/each}}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>🧪 Projects</h2>
+    <div class="project-slider-wrapper" id="projects-list">
+      {{#each projects}}
+      <div class="project">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <div class="project-images">
+          {{#each images}}
+          <img src="/images/projects/{{this}}" alt="{{../title}}">
+          {{/each}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+
+  </section>
+  <section id="patents">
+  <h2>📜 Patents</h2>
+  <div class="slider" id="patents-list">
+    {{#each patents}}
+    <div class="patent-card">
+      <h3>{{title}}</h3>
+      <p>{{description}}</p>
+      <div class="patent-images">
+        {{#each images}}
+        <img src="/images/patents/{{this}}" alt="{{../title}}">
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
+<section id="skills" class="skills-section">
+  <h2>💻 Skills</h2>
+  <div class="skills-container">
+    <div class="skill-card" data-skill="HTML">
+      <i class="fab fa-html5"></i>
+      <h3>HTML</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 90%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="CSS">
+      <i class="fab fa-css3-alt"></i>
+      <h3>CSS</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 95%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="JavaScript">
+      <i class="fab fa-js"></i>
+      <h3>JavaScript</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 85%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="Node.js">
+      <i class="fab fa-node-js"></i>
+      <h3>Node.js</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 70%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="Node.js">
+      <i class="fab fa-node-js"></i>
+      <h3>Java</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 75%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="Node.js">
+      <i class="fab fa-node-js"></i>
+      <h3>Python</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 80%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="Node.js">
+      <i class="fab fa-node-js"></i>
+      <h3>C</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 90%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="Node.js">
+      <i class="fab fa-node-js"></i>
+      <h3>Sql</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 95%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="Node.js">
+      <i class="fab fa-node-js"></i>
+      <h3>Editing</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 90%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="Node.js">
+      <i class="fab fa-node-js"></i>
+      <h3>MongoDB</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 90%"></div>
+      </div>
+    </div>
+    <div class="skill-card" data-skill="Node.js">
+      <i class="fab fa-node-js"></i>
+      <h3>Entrepreneurship</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 99%"></div>
+      </div>
+    </div>
+     <div class="skill-card" data-skill="Node.js">
+      <i class="fab fa-node-js"></i>
+      <h3>Inventor</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 89%"></div>
+      </div>
+    </div>
+    <!-- Add more skills similarly -->
+  </div>
+</section>
+<section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+  <p class="contact-intro">Let's connect! Feel free to reach out via any platform below.</p>
+  
+  <div class="contact-cards">
+    <a href="https://www.linkedin.com/in/arsh-uddin-1ab356289/" target="_blank" class="contact-card">
+      <i class="fab fa-linkedin-in"></i>
+      <span>LinkedIn</span>
+    </a>
+
+    <a href="mailto:uddinarsh029@gmail.com" class="contact-card">
+      <i class="fas fa-envelope"></i>
+      <span>Email</span>
+    </a>
+
+    <a href="tel:+919457294984" class="contact-card">
+      <i class="fas fa-phone-alt"></i>
+      <span>+91 9457294984</span>
+    </a>
+
+    <a href="https://www.instagram.com/raza_arsh8" target="_blank" class="contact-card">
+      <i class="fab fa-instagram"></i>
+      <span>Instagram</span>
+    </a>
+  </div>
+</section>
+
+
+
+  {{!-- <section id="contact">
+    <h2>📬 Contact</h2>
+  </section> --}}
+
+  <script src="/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+
+</html>

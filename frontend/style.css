@@ -1,0 +1,472 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: #0e0e0e;
+    color: #e0e0e0;
+    font-size: 16px; /* or at least 14px */
+  }
+  
+  nav {
+    background: #111;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    justify-content: center;
+  }
+  nav a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav a:hover {
+    text-shadow: 0 0 10px #00ffff;
+  }
+  
+  .hero-section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .glow {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  }
+  
+  section {
+    padding: 40px 20px;
+    border-top: 1px solid #222;
+  }
+  
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .slider > div {
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    /* background: #fff; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slider img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  #achievements-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    position: relative;
+  }
+  
+  .achievement-card {
+    display: inline-block;
+    width: 500px;
+    /* height: 200px; */
+    min-height: 350px;
+    margin: 10px;
+    vertical-align: top;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    white-space: normal;
+  }
+  
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0.7;
+  }
+  
+  .slider-button:hover {
+    opacity: 1;
+  }
+  
+  #slider-left {
+    left: 0;
+  }
+  
+  #slider-right {
+    right: 0;
+  }
+  #achievements p{
+    margin: 20px;
+  }
+  #achievements h3{
+    text-align: center;
+    
+  }
+  #achievements button{
+    outline: none;
+    border: none;
+  }
+  .achievement-card img:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  /* Section Heading */
+  #projects-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    position: relative;
+  }
+  
+  .project-card {
+    display: inline-block;
+    width: 500px;
+    /* height: 200px; */
+    min-height: 350px;
+    margin: 10px;
+    vertical-align: top;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    white-space: normal;
+  }
+  
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0.7;
+  }
+  
+  .slider-button:hover {
+    opacity: 1;
+  }
+  
+  #slider-left {
+    left: 0;
+  }
+  
+  #slider-right {
+    right: 0;
+  }
+  #projects p{
+    margin: 20px;
+  }
+  #projects h3{
+    text-align: center;
+  }
+  #projects button{
+    outline: none;
+    border: none;
+  }
+  .project-card img:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  /* Section Heading */
+  #patents {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    position: relative;
+  }
+  
+  .patent-card {
+    display: inline-block;
+    width: 500px;
+    min-height: 350px;
+    margin: 10px;
+    vertical-align: top;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    white-space: normal;
+  }
+  
+  #patents p {
+    margin: 20px;
+    /* color: #000; */
+  }
+  
+  #patents h3 {
+    text-align: center;
+    /* color: #000; */
+  }
+  
+  #patents button {
+    outline: none;
+    border: none;
+    display: none;
+  }
+  
+  .patent-card img:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+  .skills-section {
+    padding: 60px 20px;
+    /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* .skills-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  } */
+  
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .skill-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+  }
+  
+  .skill-card i {
+    font-size: 40px;
+    color: #00ffff;
+    margin-bottom: 15px;
+    animation: floatIcon 2s ease-in-out infinite;
+  }
+  
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  .skill-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .progress-bar {
+    background-color: #ffffff20;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    height: 100%;
+    border-radius: 10px;
+    animation: fillBar 2s ease forwards;
+  }
+  
+  @keyframes fillBar {
+    0% { width: 0; }
+  }
+  .contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    /* background: #f8f9fa; */
+  }
+  
+  .contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .contact-intro {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #ffff;
+  }
+  
+  .contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .contact-card {
+    background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    border-radius: 15px;
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #333;
+    width: 180px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 0.6s ease both;
+  }
+  
+  .contact-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #0d47a1;
+  }
+  
+  .contact-card span {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .contact-card:hover {
+    transform: scale(1.05);
+    background: #e6f0ff;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-card {
+      width: 90%;
+    }
+  }
+  /* #about {
+    padding: 60px 20px;
+    background-color: #fdfdfd;
+    color: #333;
+  } */
+  
+  .about-content {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  
+  .sub-heading {
+    margin-top: 30px;
+    font-size: 1.3rem;
+    color: #2c3e50;
+    font-weight: bold;
+    border-bottom: 2px solid #00b894;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .education-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+  }
+  
+  .education-list li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .education-list li::before {
+    content: "🎓";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .project-card {
+    background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    /* border: 1px solid #bbdefb; */
+    /* border-radius: 10px; */
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.15);
+    /* padding: 20px; */
+    color: #0d47a1;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0, 123, 255, 0.25);
+  }
+  
+  .achievement-card {
+    background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    /* border: 1px solid #bbdefb; */
+    /* border-radius: 10px; */
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.15);
+    /* padding: 20px; */
+    color: #0d47a1;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  }
+  .achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0, 123, 255, 0.25);
+  }
+  .patent-card {
+    background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    /* border: 1px solid #bbdefb; */
+    /* border-radius: 10px; */
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.15);
+    /* padding: 20px; */
+    color: #0d47a1;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  }
+  .patent-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0, 123, 255, 0.25);
+  }
+  h2{
+    font-size: 2.5rem;
+    text-align: center;
+  }
