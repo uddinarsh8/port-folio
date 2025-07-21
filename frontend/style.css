@@ -470,3 +470,74 @@ body {
     font-size: 2.5rem;
     text-align: center;
   }
+  /* ========== Mobile-first Enhancements (for widths <= 480px) ========== */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .hero-section, .skills-section, .contact-section, section {
+    padding: 30px 10px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .slider > div,
+  .achievement-card,
+  .project-card,
+  .patent-card {
+    width: 90% !important;
+    margin: 12px auto;
+    margin-left: 23px;
+  
+    min-height: auto;
+  }
+
+  .slider-button {
+    display: none; /* Hide arrows on narrow screens */
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-card {
+    width: 100%;
+  }
+
+  .education-list li {
+    padding-left: 15px;
+  }
+
+  .about-content {
+    padding: 0 10px;
+    font-size: 0.95rem;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  #achievements h3,
+  #projects h3,
+  #patents h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+  }
+}
