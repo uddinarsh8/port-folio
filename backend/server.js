@@ -9,7 +9,8 @@ const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-ac
 const app = express();
 
 // MongoDB URI
-const MONGO_URI = 'mongodb://127.0.0.1:27017/portfolio';
+const MONGO_URI = 'mongodb+srv://razaarsh8:Technical1%40@portfolio.cqbrvfb.mongodb.net/?retryWrites=true&w=majority&appName=portfolio';
+
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URI, {
