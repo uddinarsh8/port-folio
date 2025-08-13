@@ -1,3 +1,70 @@
+
+
+/* === Mobile-first responsive enhancements (added by ChatGPT) === */
+:root {
+  --container-pad: 16px;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Fluid type scales */
+h1 { font-size: clamp(1.8rem, 6vw, 3rem); }
+h2 { font-size: clamp(1.25rem, 4.5vw, 2rem); }
+h3 { font-size: clamp(1.05rem, 3.5vw, 1.35rem); }
+
+section, .section {
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+/* Make media fluid */
+img, video, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Nav wraps on small screens */
+nav ul {
+  flex-wrap: wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px;
+}
+
+/* Cards default to full-width on mobile */
+.achievement-card,
+.project-card,
+.patent-card,
+.contact-card {
+  width: 100% !important;
+  max-width: 500px;
+}
+
+/* Contact cards can be slightly wider */
+.contact-card { max-width: 420px; }
+
+/* Grids & flex containers wrap */
+[class*="container"],
+[class*="grid"],
+[class*="row"],
+[class*="cards"] {
+  width: 100%;
+}
+
+.flex, .row, .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Patent horizontal scroller: make items narrower on small screens */
+#patents .slider > div {
+  flex: 0 0 240px;
+}
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+
 body {
     margin: 0;
     padding: 0;
@@ -5,6 +72,12 @@ body {
     background: #0e0e0e;
     color: #e0e0e0;
     font-size: 16px; /* or at least 14px */
+    overflow-x: hidden;
+  width: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
   }
   
   nav {
@@ -87,7 +160,7 @@ body {
   
   .achievement-card {
     display: inline-block;
-    width: 500px;
+    width: 100%; max-width: 500px;
     /* height: 200px; */
     min-height: 350px;
     margin: 10px;
@@ -148,7 +221,7 @@ body {
   
   .project-card {
     display: inline-block;
-    width: 500px;
+    width: 100%; max-width: 500px;
     /* height: 200px; */
     min-height: 350px;
     margin: 10px;
@@ -208,7 +281,7 @@ body {
   
   .patent-card {
     display: inline-block;
-    width: 500px;
+    width: 100%; max-width: 500px;
     min-height: 350px;
     margin: 10px;
     vertical-align: top;
@@ -249,14 +322,21 @@ body {
     text-align: center;
   }
   
-  .skills-section h2 {
+  /* .skills-section h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
     font-weight: bold;
     letter-spacing: 2px;
+  } */
+  
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
   }
   
-
   .skill-card {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
@@ -337,7 +417,7 @@ body {
     padding: 20px 30px;
     text-decoration: none;
     color: #333;
-    width: 180px;
+    width: 100%; max-width: 420px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     display: flex;
@@ -483,25 +563,15 @@ body {
     font-size: 1.8rem;
   }
 
-/*   .slider > div,
+  .slider > div,
   .achievement-card,
   .project-card,
   .patent-card {
-    width: 80% !important;
+    width: 90% !important;
     margin: 12px auto;
-    margin-left: 45px;
+    margin-left: 23px;
   
     min-height: auto;
-  } */
-    .slider > div,
-  .achievement-card,
-  .project-card,
-  .patent-card {
-    flex: 0 0 300px;
-    scroll-snap-align: center;
-    /* border: 1px solid #ccc; */
-    /* border-radius: 10px; */
-    padding: 15px;
   }
 
   .slider-button {
@@ -543,4 +613,20 @@ body {
   .contact-intro {
     font-size: 1rem;
   }
+}
+
+
+
+
+/* === Breakpoints === */
+@media (min-width: 768px) {
+  section, .section { padding-left: 24px; padding-right: 24px; }
+  #patents .slider > div { flex: 0 0 300px; }
+}
+
+@media (min-width: 1024px) {
+  section, .section { padding-left: 40px; padding-right: 40px; }
+  .achievement-card,
+  .project-card,
+  .patent-card { max-width: 560px; }
 }
